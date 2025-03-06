@@ -11,7 +11,7 @@ function App() {
   const [filteredAssignments, setFilteredAssignments] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  //  this filter  when `searchQuery` changes
+  //  filter when `assignments` or `searchQuery` changes
   useEffect(() => {
     if (!searchQuery) {
       setFilteredAssignments(assignments);
@@ -22,7 +22,7 @@ function App() {
         )
       );
     }
-  }, [searchQuery]);
+  }, [assignments, searchQuery]);
 
   return (
     <div className="font-rubik text-primary-text bg-light-gray flex h-screen overflow-hidden">
